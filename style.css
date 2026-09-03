@@ -1,0 +1,380 @@
+/* style.css
+   One stylesheet, shared by every page on the site.
+   Keep it simple: no frameworks, no build step, just CSS. */
+
+body {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 70px 24px;
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  line-height: 1.7;
+  color: #1a1a1a;
+  background: #fdfdfb;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: #1a1a1a;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+}
+
+a:hover {
+  border-bottom-color: #1a1a1a;
+}
+
+header {
+  margin-bottom: 52px;
+}
+
+header .wordmark {
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 600;
+  color: #1a1a1a;
+  border-bottom: none;
+  margin-bottom: 6px;
+}
+
+header .page-tagline {
+  color: #666;
+  font-size: 15px;
+  font-style: italic;
+  margin: 0 0 18px 0;
+}
+
+/* Home page — full-page centered intro */
+.home-body {
+  display: flex;
+  min-height: 100vh;
+  padding: 0;
+  max-width: none;
+}
+
+.home {
+  margin: auto;
+  max-width: 560px;
+  padding: 24px;
+  text-align: center;
+}
+
+.home h1 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 14px 0;
+}
+
+.home-subtitle {
+  font-size: 18px;
+  font-style: italic;
+  color: #666;
+  margin: 0 0 34px 0;
+}
+
+.home-name {
+  font-size: 15px;
+  color: #999;
+  margin: 0 0 40px 0;
+}
+
+.home-nav {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+}
+
+.home-nav a {
+  font-size: 16px;
+}
+
+@media (max-width: 480px) {
+  .home h1 {
+    font-size: 30px;
+  }
+
+  .home-nav {
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+
+header h1 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+header p {
+  margin: 0 0 18px 0;
+  color: #666;
+  font-size: 16px;
+  font-style: italic;
+}
+
+/* Top navigation, shared across every page on the site */
+.site-nav {
+  display: flex;
+  gap: 22px;
+  border-bottom: 1px solid #e5e5e0;
+  padding-bottom: 14px;
+}
+
+.site-nav a {
+  font-size: 15px;
+  color: #888;
+  border-bottom: none;
+  padding-bottom: 4px;
+}
+
+.site-nav a:hover {
+  color: #1a1a1a;
+}
+
+.site-nav a.active {
+  color: #1a1a1a;
+  border-bottom: 2px solid #1a1a1a;
+}
+
+/* Essay list on the homepage */
+.essay-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.essay-list li {
+  margin-bottom: 16px;
+  font-size: 19px;
+}
+
+.essay-list .date {
+  color: #999;
+  font-size: 15px;
+  margin-right: 10px;
+  font-variant-numeric: oldstyle-nums;
+}
+
+/* Single essay page */
+.essay h1 {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+
+.essay .meta {
+  color: #999;
+  font-size: 15px;
+  margin-bottom: 44px;
+  font-variant-numeric: oldstyle-nums;
+}
+
+/* Paragraphs set like a printed page: no gap between them,
+   each new paragraph (after the first) marked by an indent
+   instead of by whitespace. This is what makes it read as
+   continuous prose rather than a stack of separate lines. */
+.essay p {
+  margin: 0 0 22px 0;
+  text-align: left;
+}
+
+/* Notes tab: grid of square tiles */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 14px;
+}
+
+.note-tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1;
+  border-bottom: none;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #e8e6df;
+}
+
+.note-tile-image {
+  position: absolute;
+  inset: 0;
+  background-color: #e0ded4;
+  background-size: cover;
+  background-position: center;
+}
+
+.note-tile-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 1.3;
+  color: #fff;
+  background: linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0));
+}
+
+.note-tile:hover .note-tile-title {
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.1));
+}
+
+/* Individual note page reuses essay-style typography */
+.note h1 {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+
+.note .meta {
+  color: #999;
+  font-size: 15px;
+  margin-bottom: 32px;
+  font-variant-numeric: oldstyle-nums;
+}
+
+.note .note-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background-color: #e0ded4;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  margin-bottom: 32px;
+}
+
+.note p {
+  margin: 0 0 22px 0;
+  text-align: left;
+}
+
+/* Great Work by Others: curated external list */
+.great-work-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.great-work-list li {
+  margin-bottom: 26px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid #eeede8;
+}
+
+.great-work-list li:last-child {
+  border-bottom: none;
+}
+
+.great-work-list .title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.great-work-list a.title {
+  font-size: 19px;
+}
+
+.great-work-list .type-tag {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #999;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 2px 7px;
+}
+
+.great-work-list .creator {
+  display: block;
+  font-size: 14px;
+  color: #999;
+  margin-top: 2px;
+}
+
+.great-work-list p {
+  margin: 8px 0 0 0;
+  font-size: 16px;
+}
+
+.essay blockquote {
+  margin: 32px 0;
+  padding-left: 20px;
+  border-left: 2px solid #ddd;
+  font-style: italic;
+  color: #444;
+  text-align: left;
+}
+
+.essay blockquote cite {
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+  font-size: 15px;
+  color: #999;
+}
+
+.essay .signature {
+  margin-top: 44px;
+  font-style: italic;
+  text-indent: 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 44px;
+  font-size: 15px;
+}
+
+/* Share row at the bottom of each essay */
+.share-row {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e5e0;
+  font-size: 14px;
+}
+
+.share-row .share-label {
+  color: #999;
+  margin-right: 12px;
+}
+
+.share-row a,
+.share-row button {
+  display: inline-block;
+  margin-right: 16px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 0;
+  cursor: pointer;
+}
+
+.share-row a:hover,
+.share-row button:hover {
+  border-bottom-color: #1a1a1a;
+}
+
+.share-row .copied {
+  color: #999;
+  border-bottom: none;
+}
+
+footer {
+  margin-top: 64px;
+  font-size: 13px;
+  color: #999;
+}
+
+@media (max-width: 480px) {
+  .essay p {
+    text-align: left;
+  }
+}

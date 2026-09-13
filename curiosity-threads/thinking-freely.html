@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cognitive Relics</title>
+  <title>Thinking Freely</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
 </head>
-<body data-thread-slugs="making-a-living, thinking-freely">
+<body>
 
   <header>
     <a href="../index.html" class="wordmark">Marcela M. Thomassen</a>
     <nav class="site-nav">
-      <a href="../curiosity-threads.html">Curiosity Threads</a>
-      <a href="../essays.html" class="active">Essays</a>
+      <a href="../curiosity-threads.html" class="active">Curiosity Threads</a>
+      <a href="../essays.html">Essays</a>
       <a href="../field-notes.html">Field Notes</a>
       <a href="../great-work.html">Ideas Worth Sharing</a>
       <a href="../about.html">About</a>
     </nav>
   </header>
 
-  <main class="essay">
+  <main class="thread">
     <div class="title-row">
-      <h1>Cognitive Relics</h1>
+      <h1>Thinking Freely</h1>
       <div class="content-share">
         <button class="share-icon" type="button" aria-label="Copy share link" title="Copy share link">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -37,13 +37,42 @@
         </button>
       </div>
     </div>
-    <p class="meta">August 2026</p>
-    <div class="page-tags" id="page-tags"></div>
 
-    <p class="content-placeholder">Placeholder for the Cognitive Relics essay.</p>
+    <div class="thread-meta">
+      <div class="thread-meta-item">
+        <span class="label">Status</span>
+        <span>Active</span>
+      </div>
+      <div class="thread-meta-item">
+        <span class="label">Start Date</span>
+        <span>2026</span>
+      </div>
+    </div>
+
+    <div class="thread-section thread-question-block">
+      <h2>Central Question</h2>
+      <p>
+        How do we become free enough to think for ourselves without becoming trapped by inherited certainty?
+      </p>
+    </div>
+
+    <div class="thread-section thread-about-block">
+      <h2>About</h2>
+      <p>
+        This thread is about the difficult, liberating work of examining the beliefs we inherit before we are old enough to question them. It is a study of curiosity, intellectual independence, and the courage required to question systems of meaning that once felt total.
+      </p>
+    </div>
+
+    <div class="thread-section">
+      <h2>Pieces</h2>
+      <p class="thread-pieces" id="piece-count">1 Essay &amp; 0 Field Notes</p>
+      <ul class="thread-piece-list" id="thread-piece-list">
+        <li><a href="../essays/cognitive-relics.html">Cognitive Relics</a> <span class="piece-type">Essay</span></li>
+      </ul>
+    </div>
   </main>
 
-  <a class="back-link" href="../essays.html">&larr; Back to all essays</a>
+  <a class="back-link" href="../curiosity-threads.html">&larr; Back to all curiosity threads</a>
 
   <footer>
     &copy; 2026
@@ -51,38 +80,10 @@
 
   <script>
     (function () {
-      var threadMap = {
-        'making-a-living': {
-          label: 'Making a Living',
-          href: '../curiosity-threads/making-a-living.html'
-        },
-        'thinking-freely': {
-          label: 'Thinking Freely',
-          href: '../curiosity-threads/thinking-freely.html'
-        }
-      };
-
-      var slugs = (document.body.getAttribute('data-thread-slugs') || '').split(',').map(function (slug) {
-        return slug.trim();
-      }).filter(Boolean);
-
-      var tagContainer = document.getElementById('page-tags');
-      if (tagContainer && slugs.length) {
-        slugs.forEach(function (slug) {
-          var thread = threadMap[slug];
-          if (!thread) return;
-          var tag = document.createElement('a');
-          tag.href = thread.href;
-          tag.className = 'thread-tag';
-          tag.textContent = thread.label;
-          tagContainer.appendChild(tag);
-        });
-      }
-
       var shareButton = document.querySelector('.share-icon');
       shareButton.addEventListener('click', function () {
-        var label = shareButton.querySelector('span');
         navigator.clipboard.writeText(window.location.href).then(function () {
+          var label = shareButton.querySelector('span');
           shareButton.setAttribute('aria-label', 'Link copied');
           shareButton.setAttribute('title', 'Link copied');
           label.textContent = 'Link copied';
@@ -95,7 +96,6 @@
           }, 1500);
         });
       });
-
     })();
   </script>
 

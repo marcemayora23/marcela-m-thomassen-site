@@ -373,6 +373,27 @@ header h1 {
   gap: 14px;
 }
 
+.diagrams {
+  max-width: 720px;
+}
+
+.diagram {
+  margin: 0;
+}
+
+.diagram img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.diagram figcaption {
+  margin-top: 10px;
+  color: #666;
+  font-size: 15px;
+  font-style: italic;
+}
+
 .note-tile {
   position: relative;
   display: block;
@@ -435,56 +456,6 @@ header h1 {
 .note p {
   margin: 0 0 22px 0;
   text-align: left;
-}
-
-/* Great Work by Others: curated external list */
-.great-work-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.great-work-list li {
-  margin-bottom: 26px;
-  padding-bottom: 26px;
-  border-bottom: 1px solid #eeede8;
-}
-
-.great-work-list li:last-child {
-  border-bottom: none;
-}
-
-.great-work-list .title-row {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.great-work-list a.title {
-  font-size: 19px;
-}
-
-.great-work-list .type-tag {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: #999;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  padding: 2px 7px;
-}
-
-.great-work-list .creator {
-  display: block;
-  font-size: 14px;
-  color: #999;
-  margin-top: 2px;
-}
-
-.great-work-list p {
-  margin: 8px 0 0 0;
-  font-size: 16px;
 }
 
 .essay blockquote {

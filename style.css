@@ -374,23 +374,60 @@ header h1 {
 }
 
 .diagrams {
-  max-width: 720px;
+  max-width: 900px;
 }
 
-.diagram {
+.diagram-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.diagram-card {
+  display: block;
+  border-bottom: none;
+}
+
+.diagram-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid #e5e2d9;
+  transition: opacity 160ms ease;
+}
+
+.diagram-card:hover img {
+  opacity: 0.78;
+}
+
+.diagram-card span {
+  display: block;
+  margin-top: 10px;
+  color: #666;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.diagram-detail {
+  max-width: 900px;
+}
+
+.diagram-expanded {
   margin: 0;
 }
 
-.diagram img {
+.diagram-expanded img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.diagram figcaption {
-  margin-top: 10px;
+.diagram-expanded figcaption {
+  margin-top: 14px;
   color: #666;
-  font-size: 15px;
+  font-size: 16px;
   font-style: italic;
 }
 
